@@ -23,6 +23,7 @@ namespace test
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            //LastTest 最后一次提交测试 这个只是一个Demo 里面包含了word的基本操作，可以看看
             //todo:this is  creatDocument
             //WriteIntoWord wiw = null;
             //wiw = new WriteIntoWord();
