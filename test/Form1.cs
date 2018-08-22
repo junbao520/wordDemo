@@ -35,9 +35,50 @@ namespace test
             //wiw.WritePicIntoDocument("question", picpath);
             //path = System.IO.Directory.GetCurrentDirectory() + "\\" + "test" + ".doc";
             //wiw.Save_CloseDocument(path);
-            
 
-            //
+
+           // 第一步：组件安装后，创建一个C#控制台项目，添加引用及命名空间如下：
+
+
+           // Document doc = new Document();
+
+           // doc.LoadFromFile("sample.doc");
+
+
+           // 第三步：实例化一个PrintDialog的对象，设置相关属性。关联doc.PrintDialog属性和PrintDialog对象:
+
+
+
+           //  PrintDialog dialog = new PrintDialog();
+
+           // dialog.AllowPrintToFile = true;
+
+           // dialog.AllowCurrentPage = true;
+
+           // dialog.AllowSomePages = true;
+
+           // dialog.UseEXDialog = true;
+
+           // doc.PrintDialog = dialog;
+
+
+           // 第四步: 后台打印。使用默认打印机打印出所有页面。这段代码也可以用于网页后台打印:
+
+           //PrintDocument printDoc = doc.PrintDocument;
+
+           // printDoc.Print();
+
+
+           // 第五步: 如要显示打印对话框，就调用ShowDialog方法，根据打印预览设置选项，打印word文档:
+
+           //   if (dialog.ShowDialog() == DialogResult.OK)
+
+           // {
+
+           //     printDoc.Print();
+
+           // }
+
 
         }
 
@@ -48,10 +89,13 @@ namespace test
 
             var tt1= DateTime.Now;
             doc.LoadFromFile(path);
+
+          
             //doc.SaveToFile(System.IO.Directory.GetCurrentDirectory() + "\\"+"111.pdf", Spire.Doc.FileFormat.PDF);
 
+           
             System.Drawing.Image image = doc.SaveToImages(0, Spire.Doc.Documents.ImageType.Metafile);
-            //todo:保存成为图片不理想
+            //todo:保存成为图片不理想 //
             image.Save("sample.jpg", ImageFormat.Jpeg);
             var tt2 = DateTime.Now;
             var ts2 = (tt2 - tt1).TotalMilliseconds;
