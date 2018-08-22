@@ -23,6 +23,7 @@ namespace test
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            //todo:this is  creatDocument
             //WriteIntoWord wiw = null;
             //wiw = new WriteIntoWord();
             //var path = System.IO.Directory.GetCurrentDirectory() + "\\" + "test.dotx";
@@ -59,10 +60,12 @@ namespace test
 
             DateTime t1 = new DateTime();
             WriteIntoWord word = new WriteIntoWord();
-           var bitmap= word.WordtoImage(path);
+             var bitmap= word.WordtoImage(path);
              bitmap[0].Save("sample1.jpg", ImageFormat.Jpeg);
              DateTime t2 = new DateTime();
             var ts = (t2 - t1).TotalMilliseconds;
+
+
 
             MessageBox.Show("ok"+ts);
 
