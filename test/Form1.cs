@@ -382,8 +382,8 @@ namespace test
 
         }
 
-   
-            public  bool GetPicThumbnail(string sFile, string dFile, int dHeight, int dWidth, int flag)
+             //图片压缩
+        public  bool GetPicThumbnail(string sFile, string dFile, int dHeight, int dWidth, int flag)
             {
                 System.Drawing.Image iSource = System.Drawing.Image.FromFile(sFile);
                 ImageFormat tFormat = iSource.RawFormat;
@@ -463,7 +463,7 @@ namespace test
 
         private void button5_Click(object sender, EventArgs e)
         {
-            GetPicThumbnail("tests.jpg", "new.jpg", 130, 160, 100);
+            GetPicThumbnail("tests.jpg", "new.jpg",130, 160, 100);
             MessageBox.Show("ok");
         }
     }
